@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
         else
             login!(@user)
             render "api/users/show"
-        else
+        end
     end
 
 
@@ -18,10 +18,8 @@ class Api::SessionsController < ApplicationController
             logout!
             render json: {}
         else
-            render json: ['you are not logged in'] status: 404
+            render json: ['you are not logged in'], status: 404
         end
-
-
     end
 
 
